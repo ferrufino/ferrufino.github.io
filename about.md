@@ -9,9 +9,9 @@ My day work is as a full stack engineer at Microsoft. I've done a little bit of 
 - Backend (.NET/C#)
 - Frontend (React)
 
-During my free time I'm attempting now to learn Flutter/Dart among other stuff!
+During my free time I'm attempting now to learn Flutter/Dart among other stuff.
 
-Expect related topics of the above^ overall in this blog!
+Expect tech related posts and maybe some random thought I find worth while in this blog 🤙🏼
 
 
 **In the media:**
