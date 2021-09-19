@@ -2,14 +2,8 @@
 layout: page
 title: About
 ---
-**Welcome!** I'm a Software Engineer originally from Bolivia 🇧🇴 enjoying life in Vancouver, Canada 🇨🇦 
+**Welcome!** I'm a full-stack Software Engineer originally from Bolivia 🇧🇴 enjoying life in Vancouver, Canada 🇨🇦 
 My day work is as a full stack engineer at Microsoft. 
-
-I've done a little bit of everything:
-- Data processing (Scala, Pyspark, U-SQL)
-- Infrastructure in Azure/Azure Devops/.NET
-- Backend (.NET/C#)
-- Frontend (React)
 
 During my free time I'm attempting to learn Flutter/Dart, enjoy an outdoor sport, or brew a new beer/wine.
 
