@@ -9,7 +9,7 @@ Originally from Bolivia 🇧🇴 enjoying life in Vancouver, Canada 🇨🇦
 Expect tech related posts and maybe some random thought I find worth while sharing in this blog 🤙🏼
 
 
-**In the media:**
+### In the media:
 
 HackBo - National hackathon I founded and led:
 - [ElDeber posts (Bolivian newspaper)](https://eldeber.com.bo/tag/gustavo%20ferrufino)
