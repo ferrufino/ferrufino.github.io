@@ -77,7 +77,8 @@ static int findLength(const string &str, int k) {
             }
             windowStart++; // shrink the window
         }
-        maxLength = max(maxLength, windowEnd - windowStart + 1); // remember the maximum length so far
+         // remember the maximum length so far
+        maxLength = max(maxLength, windowEnd - windowStart + 1);
     }
     return maxLength;
 }
