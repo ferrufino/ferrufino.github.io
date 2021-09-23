@@ -91,7 +91,7 @@ Find the length of the longest substring without any repeating char.
 **Problem Explanation:**\
 If iterating char already exists in dictionary and the position of it is higher than the window start\
   Update window start to val + 1 to skip that char\
-Save pos of encounter of char\
+Save position of encountered char\
 Find max length
 
 **Swift**
