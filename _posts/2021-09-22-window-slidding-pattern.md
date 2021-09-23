@@ -9,7 +9,7 @@ date: 2021-09-22 13:10 +0800
 This pattern evaluates sub-windows within an array/string/linked-list.\
 We keep a sub-window of evaluation and when a condition is met, it 'slides' to the right.
 
-It usually applies to problems that need to evaluate if find a continuous group (substring/subarray) are true to a desired condition.
+It usually applies to problems that need to evaluate/find a continuous sub-group (substring/subarray).
 
 Below I describe few samples of this pattern being applied in C++ and Swift.
 
@@ -23,7 +23,7 @@ Given an array of positive numbers and a positive number ‘k,’ find the maxim
 > Explanation: Subarray with maximum sum is [5, 1, 3].
 
 **Problem Explanation:**\
-Window here is kept in size K. It adds a new entry on the right of 'arr' and subtract first entry (left entry) to always keep the sum size K.
+Window here is kept in size 'k'. It adds a new entry on the right of 'arr' and subtracts first entry (left entry) to always keep the sum size K.
 
 **C++**
 
