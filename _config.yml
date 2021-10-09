@@ -1,6 +1,6 @@
 # Setup
 title: Gustavo Ferrufino
-description: Software Engineer
+description: Software Engineer -  Builder
 url: https://ferrufino.github.io
 avatar: /avatar.jpeg
 paginate: 5
@@ -35,7 +35,7 @@ logo: logo.png
 social:
   name: Gustavo Ferrufino
   links:
-    - https://twitter.com/ferrufino
+    - https://twitter.com/ferrufinodlf
     - https://github.com/ferrufino
 google_site_verification: xxxxx
 lang: en

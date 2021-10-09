@@ -9,47 +9,45 @@ date: 2021-09-22 13:10 +0800
 This pattern evaluates sub-windows within an array/string/linked-list.\
 We keep a sub-window of evaluation and when a condition is met, it 'slides' to the right.
 
-It usually applies to problems that need to evaluate/find a continuous sub-group (substring/subarray).
-
-Below I describe few samples of this pattern being applied in C++ and Swift.
+Below I describe few examples of this pattern being applied in C++ and Swift.
 
 ## Maximum sum subarray of Size K
 
 **Problem Description:**\
-Given an array of positive numbers and a positive number ‘k,’ find the maximum sum of any contiguous subarray of size ‘k’.\
+Given an array of positive numbers and a positive number ‘k,’ find the maximum sum of any contiguous subarray of size ‘k’.
 
 > Input: [2, 1, 5, 1, 3, 2], k=3\
 > Output: 9\
 > Explanation: Subarray with maximum sum is [5, 1, 3].
 
 **Problem Explanation:**\
-Window here is kept in size 'k'. It adds a new entry on the right of 'arr' and subtracts first entry (left entry) to always keep the sum size K.
+Window here is kept in size 'k'. It adds a new entry on the right of 'arr' and subtracts first entry (left entry) to always keep the sum size 'k'.
 
 **C++**
 
 ```
 static int findMaxSumSubArray(int k, const vector<int>& arr) {
-	int maxSum = 0;
-	int wStart = 0;
-	int currentSum = 0;
-	for(int wEnd = 0; wEnd < arr.size(); wEnd++){
-		currentSum += arr[wEnd];
-		if(wEnd >= k-1){
-			maxSum = max(maxSum, currentSum);
-			currentSum -= arr[wStart];
-			wStart++;
-		}
-	}
-	return maxSum;
+   int maxSum = 0;
+   int wStart = 0;
+   int currentSum = 0;
+   for(int wEnd = 0; wEnd < arr.size(); wEnd++){
+      currentSum += arr[wEnd];
+      if(wEnd >= k-1){
+         maxSum = max(maxSum, currentSum);
+         currentSum -= arr[wStart];
+         wStart++;
+      }
+   }
+   return maxSum;
 }
 ```
 
 ## Longest Substring with no more than K distinct chars
 
 **Problem Description:**\
-Find the length of the longest substring in it with no more than K distinct characters
+Find the length of the longest substring in it with no more than 'k' distinct characters
 
-> Input: String="cbbebi", K=3\
+> Input: String="cbbebi", k=3\
 > Output: 5\
 > Explanation: The longest substrings with no more than '3' distinct characters are "cbbeb" & "bbebi".
 
@@ -114,4 +112,28 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
 
         return maxSum
     }
+```
+
+**C++**
+
+```
+static int findLength(const string& str){
+   int maxLength = 0;
+   int currentLength = 0;
+   unordered_map<char, int> map;
+   int left = 0;
+   // my right side is i
+   for(int i = 0; i < str.length(); i++){
+      char c = str[i];
+      if(map.find(c) != map.end()){
+         left = max(left, map[c]+ 1);
+      }
+      map[c] = i;
+      currentLength = i - left + 1;
+      maxLength = max(maxLength, currentLength);
+   }
+
+   return maxLength;
+}
+
 ```

@@ -10,8 +10,8 @@ Hello stranger, welcome to my blog.
 
 This is a new test I'm embarking to mainly make myself accountable of things I'm learning and hopefully help others in the process.
 
-Feedback is always welcome, please reachout through Twitter for any questions.
+Feedback is always welcome, please reachout through Twitter for any question.
 
 Thank you!
 
-- Gustavo
+Gustavo
