@@ -7,6 +7,9 @@ paginate: 5
 permalink: pretty
 cover_image: /bg.jpeg
 
+# Google Analytics
+google_analytics: G-4RLP7WH968
+
 # Gems
 plugins:
   - jekyll-gist
