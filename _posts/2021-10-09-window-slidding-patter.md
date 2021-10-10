@@ -21,13 +21,13 @@ If a string has ‘n’ distinct characters, it will have 'n!' permutations.
 > Explanation: The string contains "bca" which is a permutation\
 >  of the given pattern.
 
-**Problem Explanation:**\
-Let us first break down the problem. Our 'pattern' tell us how many times and which character must appear as a permutation in the 'string'.
+**Problem Explanation:**
+Let us first break down the problem. Our string 'pattern' tell us how many times and which character must appear as a permutation in the 'string'.
 
 If you think about it, this can be represented with a dictionary that has a frequency count per char.
 
 Then whenever we find a valid char traversing the string (exists in dictionary), we want to substract one from the frequency count of the char in the dictionary.
-  If this happens to become 0, it means we have found the freq count   for this char in the evaluated window!
+  If the value happens to become 0, it means we have found the freq count for this char in the evaluated window!
   Then we can say one letter has been matched.
 
 If our 'matched' count is equal to size of dictionary then return true.
@@ -99,3 +99,82 @@ bool findPermutation(string str, string pattern) {
 ```
 
 As always, feedback is welcome, let me know your thoughts on Twitter, thank you!
+
+## String Anagrams
+
+Given a string and a pattern, find **all anagrams of the pattern in the given string.**
+Every **anagram** is a **permutation** of a string. As we know, when we are not allowed to repeat characters while finding permutations of a string, we get N! permutations (or anagrams) of a string having N characters.
+
+> Input: String="ppqp", Pattern="pq"
+> Output: [1, 2]
+> Explanation: The two anagrams of the pattern in the given string are "pq" and "qp".
+
+## Problem Explanation
+
+This problem, different from the one above, asks us for all starting positions of a permutation.\
+We know from above how to identify a permutation of a pattern in a string.\
+Also if we continue traversing the string, instead of returning 'true' on the first permutation found.\
+We should be able to obtain all anagrams. As starting position == left side of window size.
+
+```
+Traverse string
+	add char to right of window
+	if char exists in dictionary
+		reduce frequency
+		if val of dict[char] == 0
+			matched++
+
+	if matched == dictionary size
+		push window start to array
+
+	if i >= pattern.length()
+		removed window start
+		move window start one position
+		if removed char is in dictionary
+			if dict[char] == 0
+				matched--
+		add one to frequency in dict[char]
+
+return array with start position
+```
+
+**C++**
+
+```
+vector<int> anagrams(string str, string pattern){
+        unordered_map<char,  int> map;
+        int left = 0;
+        vector<int> arr;
+        for(int i = 0; i < pattern.length(); i++){
+                map[pattern[i]]++;
+        }
+
+        for(int i = 0; i < str.length(); i++){
+                char letter = str[i];
+                if(map.find(letter) != map.end()){
+                        map[letter]--;
+                        if(map[letter] == 0){
+                                matched++;
+                        }
+                }
+
+                if(matched == map.size()){
+                        arr.push_back(left);
+                }
+
+                if(i >= pattern.length() - 1){
+                        char leftLetter = str[left];
+                        left++;
+                        if(map.find(leftLetter) != map.end()){
+                                if(map[leftLetter] == 0){
+                                        matched--;
+                                }
+                                map[leftLetter]++;
+                        }
+                }
+        }
+
+        return arr;
+}
+
+```
