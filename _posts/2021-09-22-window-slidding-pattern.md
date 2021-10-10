@@ -6,7 +6,7 @@ math: false
 date: 2021-09-22 13:10 +0800
 ---
 
-This pattern evaluates sub-windows within an array/string/linked-list.\
+The following pattern evaluates sub-windows within an array/string/linked-list.\
 We keep a sub-window of evaluation and when a condition is met, it 'slides' to the right.
 
 Below I describe few examples of this pattern being applied in C++ and Swift.
