@@ -111,7 +111,7 @@ Every **anagram** is a **permutation** of a string. As we know, when we are not 
 
 ## Problem Explanation
 
-This problem, different from the one above, asks us for all starting positions of a permutation.\
+This problem, similar to the one above, asks us for all starting positions of a permutation.\
 We know from above how to identify a permutation of a pattern in a string.\
 Also if we continue traversing the string, instead of returning 'true' on the first permutation found.\
 We should be able to obtain all anagrams. As starting position == left side of window size.
