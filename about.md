@@ -3,9 +3,9 @@ layout: page
 title: About
 ---
 
-🛠 Working on Bucketlist app.
-
 ✍🏻 Writing about distributed architectural designs and solving coding problems.
+
+🛠 Working on Bucketlist app.
 
 🍻 🍷 On my free time you might see me post about brewing beer or wine.
 
