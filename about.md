@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-✍🏻 Writing about distributed architectural designs and solving coding problems.
+✍🏻 Writing about system designs and solving coding problems.
 
 🛠 Working on Bucketlist app.
 
