@@ -3,10 +3,13 @@ layout: page
 title: About
 ---
 
-**Welcome!** I'm a full-stack Software Engineer at Microsoft.\
-Originally from Bolivia 🇧🇴 enjoying life in Vancouver, Canada 🇨🇦
+🛠 Working on Bucketlist app.
 
-I've created this website in hopes of helping others while I learn new stuff.
+✍🏻 Writing about distributed architectural designs and solving coding problems.
+
+🍻 🍷 On my free time you might see me post about brewing beer or wine.
+
+On a past life I founded [Hackbo](https://clubesdecienciabolivia.com/hackbo) in Bolivia.
 
 ### In the media:
 
