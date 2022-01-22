@@ -6,7 +6,7 @@ math: false
 date: 2021-09-22 13:10 +0800
 ---
 
-The following pattern evaluates sub-windows within an array/string/linked-list.\
+The following pattern evaluates slidding windows within an array/string/linked-list.\
 We keep a sub-window of evaluation and when a condition is met, it 'slides' to the right.
 
 Below I describe few examples of this pattern being applied in C++ and Swift.
@@ -16,16 +16,16 @@ Below I describe few examples of this pattern being applied in C++ and Swift.
 **Problem Description:**\
 Given an array of positive numbers and a positive number ‘k,’ find the maximum sum of any contiguous subarray of size ‘k’.
 
-> Input: [2, 1, 5, 1, 3, 2], k=3\
-> Output: 9\
-> Explanation: Subarray with maximum sum is [5, 1, 3].
+Input: [2, 1, 5, 1, 3, 2], k=3\
+Output: 9\
+Explanation: Subarray with maximum sum is [5, 1, 3].
 
 **Problem Explanation:**\
-Window here is kept in size 'k'. It adds a new entry on the right of 'arr' and subtracts first entry (left entry) to always keep the sum size 'k'.
+Window here is kept in size 'k'. It adds a new entry on the right of 'arr' and subtracts left entry to always keep the sum size 'k'.
 
 **C++**
 
-```
+{% highlight js linenos %}
 static int findMaxSumSubArray(int k, const vector<int>& arr) {
    int maxSum = 0;
    int wStart = 0;
@@ -40,7 +40,9 @@ static int findMaxSumSubArray(int k, const vector<int>& arr) {
    }
    return maxSum;
 }
-```
+{% endhighlight %}
+Time Complexity = O(N)
+Space Complexity = O(1)
 
 ## Longest Substring with no more than K distinct chars
 
