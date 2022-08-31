@@ -3,9 +3,12 @@ layout: page
 title: About
 ---
 
-✍🏻 Writing about system designs and solving coding problems.
+✍🏻 Writing about:
 
-🛠 Working on Bucketlist app.
+- System Design
+- Solving coding problems
+- iOS Dev
+- Product Management
 
 🍻 🍷 On my free time you might see me post about brewing beer or wine.
 
