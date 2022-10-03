@@ -150,6 +150,44 @@ If size of dict > k, then we have exceeded our k limit and need to remove from t
   while dict.size() > k from windowStart remove char from dictionary.\
 Then we get max count(length of window: 'windowEnd - windowStart + 1') of chars that are equal or below k size.
 
+**Swift**
+{% highlight js linenos %}
+public func longestSubstringMaxKDistinctChars(_ K: Int, _ str: String) -> Int {
+
+    var windowS = 0
+    var longestSubs: Int = 0
+    var dict = [Character : Int]()
+
+    for (windowE, value) in str.enumerated() {
+
+        if let _ = dict[value] {
+            dict[value]! += 1
+        } else {
+            dict[value] = 1
+        }
+
+        while dict.count > K {
+            let key = str[str.index(str.startIndex, offsetBy: windowS)]
+            guard var count = dict[key] else {return -1}
+            count -= 1
+
+            if count < 1 {
+                dict[key] = nil
+            } else{
+                dict[key] = count
+            }
+
+            windowS += 1
+        }
+
+        longestSubs = max(longestSubs,  windowE - windowS + 1)
+    }
+
+    return longestSubs
+
+}
+{% endhighlight %}
+
 **C++**
 
 {% highlight js linenos %}
