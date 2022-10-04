@@ -1,7 +1,7 @@
 ---
 layout: post
-title: iOS Design Patterns - Behavioral Patterns
-tags: iosDesignPatterns, behavioralPatterns
+title: Intro Behavioral Patterns - Delegation
+tags: iosDesignPatterns, behavioralPatterns, delegationPattern
 math: false
 date: 2022-10-02 20:22 +0800
 ---
@@ -15,6 +15,9 @@ Within iOS there are different patterns to learn. They fall into the following p
 First we will look at the different type of **Behavioral Patterns**:
 
 # Behavioral Patterns
+
+Behavioral Design Pattern deals with how objects interact.
+It describes how objects communicates with each other and how the steps of a task is broken among different objects so as to provide more flexibility and make the code more efficient.
 
 ## Delegation Pattern
 
@@ -30,6 +33,8 @@ It just follows orders represented by the Boss Protocol function.
 Then the intern view controller implements methods based on information received from Boss.
 
 When you assign a delegation to self. It is like an intern stating it will be the Intern of the Boss.
+
+### Design overview
 
 `[Object in need of a delegate] -> [Protocol] <--[Object acting as a Delegate]`
 
@@ -50,31 +55,47 @@ Datasources and delegates both use this pattern:
 - Create reusable components
 - Navigation to different views depending on action taken.
 
-```
+### Example
+
+{% highlight js linenos %}
 import UIKit
 
 public protocol CreateQuestionGroupViewControllerDelegate {
 
-  func createQuestionGroupViewControllerDidCancel(_ viewController: CreateQuestionGroupViewController)
+    func createQuestionGroupViewControllerDidCancel(\_ viewController: CreateQuestionGroupViewController)
 
-  func createQuestionGroupViewController(_ viewController: CreateQuestionGroupViewController,
-                                         created questionGroup: QuestionGroup)
+    func createQuestionGroupViewController(\_ viewController: CreateQuestionGroupViewController,
+    created questionGroup: QuestionGroup)
+
 }
 
 public class CreateQuestionGroupViewController: UITableViewController {
 
-  // MARK: - Properties
-  public var delegate: CreateQuestionGroupViewControllerDelegate?
-  .
-  .
-  .
-   @IBAction func cancelPressed(_ sender: Any) {
-    delegate?.createQuestionGroupViewControllerDidCancel(self)
-   }
+    // MARK: - Properties
+    public var delegate: CreateQuestionGroupViewControllerDelegate?
+
+    @IBAction func cancelPressed(\_ sender: Any) {
+        delegate?.createQuestionGroupViewControllerDidCancel(self)
+    }
+
 }
 
 extension SelectQuestionGroupViewController: CreateQuestionGroupViewControllerDelegate {
-  public func createQuestionGroupViewControllerDidCancel(_ viewController: CreateQuestionGroupViewController) {
-    dismiss(animated: true, completion: nil)
-  }
-```
+
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+            if let navController = segue.destination as? UINavigationController,
+                let viewController = navController.topViewController as? CreateQuestionGroupViewController {
+                viewController.delegate = self // This is the key line of the method
+            }
+            //skip anything else
+        }
+    }
+
+    public func createQuestionGroupViewControllerDidCancel(\_ viewController: CreateQuestionGroupViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+}
+
+{% endhighlight %}
