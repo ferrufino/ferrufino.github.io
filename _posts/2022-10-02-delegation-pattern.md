@@ -26,7 +26,7 @@ Datasources and delegates both use this pattern:
 - Datasources provide data.
 - Delegates receive data.
 
-### Why should you use this pattern?
+### When should you use this pattern?
 
 - Breakup large classes
 - Create reusable components
@@ -56,7 +56,11 @@ In this case update the collection view and update UIView position. \
 
 ### Be Careful with
 
+Be careful about creating too many delegates for an object. It can be overused.
+
 Delegation is usually a good choice when a type needs to be usable in many different contexts, and when it has a clear owner in all of those contexts - just like how a UITableView is often owned by either a parent container view or its view controller.
+
+If an object is doing too much with many delegates, then maybe it has to be broken down to different objects.
 
 ### Code Example
 
