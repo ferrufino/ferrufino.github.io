@@ -54,7 +54,7 @@ In this case update the collection view and update UIView position. \
 (2) While dequeue reusable cell ToDoCell, It assigns self to the delegate variable of the cell. \
 <code> cell.todoDelegate = self <code>
 
-### Be Careful with:
+### Be Careful with
 
 Delegation is usually a good choice when a type needs to be usable in many different contexts, and when it has a clear owner in all of those contexts - just like how a UITableView is often owned by either a parent container view or its view controller.
 
