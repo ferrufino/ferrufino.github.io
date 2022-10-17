@@ -3,6 +3,7 @@ layout: post
 title: Intro to System Design Architecture
 tags: sysDesignArch
 math: false
+toc: true
 date: 2022-01-28 05:30 +0800
 ---
 

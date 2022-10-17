@@ -3,7 +3,7 @@ title: Gustavo Ferrufino
 description: Software Engineer
 url: https://ferrufino.github.io
 avatar:
-paginate: 5
+paginate: 10
 permalink: pretty
 cover_image: /bg.jpeg
 
@@ -59,4 +59,3 @@ sass:
 author:
   name: Gustavo Ferrufino
   url: https://github.com/ferrufino/
-  email: ferrufinodlf@gmail.com

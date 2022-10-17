@@ -3,6 +3,7 @@ layout: post
 title: Behavioral Patterns - Strategy
 tags: iosDesignPatterns, behavioralPatterns, strategyPattern
 math: false
+toc: true
 date: 2022-10-02 20:22 +0800
 ---
 

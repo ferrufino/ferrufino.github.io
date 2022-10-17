@@ -3,6 +3,7 @@ layout: post
 title: Behavioral Patterns - Memento
 tags: iosDesignPatterns, behavioralPatterns, mementoPattern
 math: false
+toc: true
 date: 2022-10-03 20:22 +0800
 ---
 
