@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Behavioral Patterns - Strategy
+title: Strategy Pattern
 tags: iosDesignPatterns, behavioralPatterns, strategyPattern
 math: false
 toc: true

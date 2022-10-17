@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Behavioral Patterns - Memento
+title: Memento Pattern
 tags: iosDesignPatterns, behavioralPatterns, mementoPattern
 math: false
 toc: true
