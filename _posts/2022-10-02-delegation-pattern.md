@@ -13,7 +13,7 @@ This allows for code reuse through object composition [^first_footnote], instead
 
 ### Design overview
 
-`[Object in need of a delegate] -> [Protocol] <--[Object acting as a Delegate]`
+<code>[Object in need of a delegate] -> [Protocol] <--[Object acting as a Delegate]<code>
 
 1. **Delegating object.** Obj that has a delegate. Delegate is hold as a weak property to avoid a retain cycle.
 2. **Delegate Protocol.** Defines methods a delegate should implement. Appears as a property within the Delegating Object.
@@ -111,7 +111,7 @@ extension ViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let currentToDo = toDos[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToDoCell
-            cell.todoDelegate = self // THIS IS THE ONLY KEY PART
+            cell.todoDelegate = self // KEY PART - ASSIGN SELF TO DELEGATE PROPERTY
             cell.label.text = currentToDo.name
             cell.checkBoxView.backgroundColor = currentToDo.isComplete ?
             UIColor(red: 0.24, green: 0.56, blue: 0.30, alpha: 1.0) : .white
