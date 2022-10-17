@@ -7,9 +7,7 @@ toc: true
 date: 2022-10-02 20:22 +0800
 ---
 
-## Strategy Pattern
-
-Strategy Pattern consists of defining different objects that conform to a strategy protocol and make them interchangeable at runtime while being used by an object (ViewController).
+Strategy Pattern consists of defining different objects that conform to a strategy protocol and make them interchangeable at runtime while being used by an object.
 
 ### Design overview
 

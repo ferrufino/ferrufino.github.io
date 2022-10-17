@@ -7,8 +7,6 @@ toc: true
 date: 2022-10-03 20:22 +0800
 ---
 
-## Memento Pattern
-
 Memento Pattern captures the current state of an object and store it in such a way that you can retrieve it at a later time when you would like to return to the previous state.
 
 1. Originator: Allows object to be saved and restored. Object to be saved.

@@ -7,11 +7,8 @@ toc: true
 date: 2022-10-02 20:22 +0800
 ---
 
-# Delegation Pattern
-
-### Description
-
 The delegation pattern allows an object to use a helper object to perform a task, instead of doing the task itself.
+
 This allows for code reuse through object composition [^first_footnote], instead of inheritance. Communicating back to its owner in a decoupled way.
 
 ### Design overview
