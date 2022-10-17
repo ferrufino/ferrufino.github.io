@@ -95,7 +95,7 @@ extension ToDoCell: UICollectionViewDelegate {
         let toDo = subtasks![indexPath.row]
         toDo.isComplete = !toDo.isComplete
         collectionView.reloadData()
-        todoDelegate?.toDoCellDidUpdateSubtask(self)
+        todoDelegate?.toDoCellDidUpdateSubtask(self) // CALL ON DELEGATE
     }
 
 }
