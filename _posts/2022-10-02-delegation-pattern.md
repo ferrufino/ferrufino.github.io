@@ -7,24 +7,27 @@ toc: true
 date: 2022-10-02 20:22 +0800
 ---
 
-The delegation pattern allows an object to use a helper object to perform a task, instead of doing the task itself.
+The delegation pattern allows an <mark> object to use a helper object to perform a task</mark>, instead of doing the task itself.
 
 This allows for code reuse through object composition [^first_footnote], instead of inheritance. Communicating back to its owner in a decoupled way.
+
+1:1 communication pattern - Delegate and Protocol
 
 ### Design overview
 
 <code>[Object in need of a delegate] -> [Protocol] <--[Object acting as a Delegate]<code>
 
-1. **Delegating object.** Obj that has a delegate. Delegate is hold as a weak property to avoid a retain cycle.
-2. **Delegate Protocol.** Defines methods a delegate should implement. Appears as a property within the Delegating Object.
-3. **Delegate.** Helper object. The delegate. Implements Delegate protocol.
+1. **Delegating object.** Obj that has a delegate. <ins>Delegate property is hold as 'weak' to avoid a retain cycle.</ins>
+2. **Delegate Protocol.** <ins>Defines methods a delegate should implement.</ins> Appears as a property within the Delegating Object.
+3. **Delegate.** Helper object. The delegate. Comforms and implements Delegate protocol. As also <ins>assigns self to delegate variable reference. </ins>
+   It is standard to send self of delegate object as an input param.
 
 Delegates should almost always be a _weak_.
 
 Datasources and delegates both use this pattern:
 
-- Datasources provide data.
-- Delegates receive data.
+- Datasources <ins>provide data.</ins>
+- Delegates <ins>receive data.</ins>
 
 ### When should you use this pattern?
 
@@ -38,20 +41,21 @@ Delegation is used for everything from handling table view events using UITableV
 
 Instead of naming all use cases, I decided to write down in words an example:
 
-In a ToDo list when a user checks a cell item marking it as complete.
-Then from the cell click, it invokes the delegate method which is the response behavior expected to happen. This is communicated to the ViewController who has the responsability to refresh the view based on latest changes..
+In a ToDo list, a user can check a cell item marking it as complete. \
+Then from the cell clicked on, it invokes a <ins>delegate method</ins> which is the response behavior expected to happen. \
+This is communicated to the ViewController who has the responsability to refresh the view based on latest changes..
 
 **ToDoCellDelegate** - protocol \
 with a method toDoCellDidUpdateSubtask
 
-**ToDoCell** - class that declares a delegate property \
+**ToDoCell** - Delegating object \
 Has a weak var delegate ToDoCellDelegate \
 Through this delegate variable calls out method when needed.
 
-**ViewController** - inherits and implements the protocol \
-(1) Inherits the ToDoCellDelegate. By doing this it implements the method, defining what will happen whenever it is called to action.
+**ViewController** - Delegate Object - inherits and implements the protocol \
+(1) Inherits the ToDoCellDelegate. By doing this it <ins>implements the method</ins>, defining what will happen whenever it is called to action.
 In this case update the collection view and update UIView position. \
-(2) While dequeue reusable cell ToDoCell, It assigns self to the delegate variable of the cell. \
+(2) While dequeue reusable cell ToDoCell, <ins>It assigns self to the delegate variable of the cell.</ins> \
 <code> cell.todoDelegate = self <code>
 
 ### Be Careful with
@@ -64,6 +68,9 @@ If an object is doing too much with many delegates, then maybe it has to be brok
 
 ### Code Example
 
+I'm skipping overload definition of methods and just defining the most important pieces to show case this pattern.
+
+Look for the uppercase comments\*
 {% highlight js linenos %}
 import UIKit
 
