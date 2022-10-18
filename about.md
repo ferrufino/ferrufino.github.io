@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I'm a Software Engineer with professional experience on iOS Mobile, Data processing, Backend distributed services and Infrastructure at Microsoft. \
+I'm a Software Engineer with professional experience on iOS mobile, Data processing, Backend distributed services, and Azure Infrastructure at Microsoft. \
 Currently I'm a mobile engineer at Microsoft Teams iOS app. \
 On a past life I founded the biggest national hackathon [HackBo](https://clubesdecienciabolivia.com/hackbo) in Bolivia, and taught tech related classes, as part of a non-profit "Clubes de Ciencia Bolivia".
 
